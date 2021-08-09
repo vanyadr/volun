@@ -20,7 +20,7 @@ import { Icon28SettingsOutline } from '@vkontakte/icons';
 import { Icon28PaletteOutline   } from '@vkontakte/icons';
 import { Icon28UserOutline  } from '@vkontakte/icons';
 import { Icon28AccessibilityOutline } from '@vkontakte/icons';
- 
+import { Icon28LinkOutline } from '@vkontakte/icons';
  
 import '@vkontakte/vkui/dist/vkui.css';
  
@@ -134,11 +134,15 @@ const Example = withAdaptivity(({ viewWidth, id, icon, fetchedUser, fetchedState
 							<PanelHeader>Новости</PanelHeader>
 							<Group>
 								<CardGrid size='l'>
+
 									<ContentCard
+
 										subtitle="Раздел: новости о приложении"
 										header="Открытие приложения!"
 										text="Всех приглашаем на открытие нашего нового приложения volunteer!"
 									/>
+									<Link href="https://vk.com/wall-205932920_7"><CellButton before={<Icon28LinkOutline />}>Подробнее</CellButton></Link>
+
 									<ContentCard
 										
 										subtitle="Раздел: новости о приложении"
@@ -146,13 +150,17 @@ const Example = withAdaptivity(({ viewWidth, id, icon, fetchedUser, fetchedState
 										text="Представляем вашему вниманию иконку приложения volunteer"
 										maxHeight={500}
 									/>
+									<Link href="https://vk.com/wall-205932920_6"><CellButton before={<Icon28LinkOutline />}>Подробнее</CellButton></Link>
+
 									<ContentCard
 										
 										subtitle="Раздел: новости о приложении"
-										header="Показ дизайн приложения volunteer"
+										header="Показан дизайн приложения volunteer"
 										text="14 июля команда volunteer показывает первый основной дизайн своего приложения. С нетерпением ждём!"
 										maxHeight={1400}
 									/>
+									<Link href="https://vk.com/wall-205932920_5"><CellButton before={<Icon28LinkOutline />}>Подробнее</CellButton></Link>
+
 								</CardGrid>
 								<img className="Persik" src={persik}/>
 							</Group>
