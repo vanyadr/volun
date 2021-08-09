@@ -117,12 +117,6 @@ const Example = withAdaptivity(({ viewWidth, id, icon, fetchedUser, fetchedState
 
 						<TabbarItem
 							onClick={onStoryChange}
-							selected={activeStory === 'messages'}
-							data-story="messages"
-							text="Календарь"
-						><Icon28BillheadOutline /></TabbarItem>
-						<TabbarItem
-							onClick={onStoryChange}
 							selected={activeStory === 'profile'}
 							data-story="profile"
 							text="Профиль"
@@ -163,71 +157,41 @@ const Example = withAdaptivity(({ viewWidth, id, icon, fetchedUser, fetchedState
 							<PanelHeader>Биржа</PanelHeader>
 							<Group>
 								<CardGrid size='l'>
-									<CellButton before={<Avatar shadow={true} size={24} ><Icon20AddCircle /></Avatar>} onClick={go} data-to='cal'>Добавить задание на Биржу</CellButton>
+									<CellButton before={<Avatar shadow={false} size={30} ><Icon20AddCircle /></Avatar>} onClick={go} data-to='cal'>Добавить задание на Биржу</CellButton>
 
-
-									<ContentCard
+									<Link href="https://vk.com/wall-205932920_4"><ContentCard
 										subtitle="Раздел: задания на Бирже"
 										header="Сбор мусора в Центральном Парке"
-										text="В центральном парке нужно собрать бутылки и пластик после коцерта"
+										text="В центральном парке нужно собрать бутылки и пластик после коцерта, будем благодарны каждому откликнувшемуся"
 										caption='Адрес: ул. Макарова 81; Баллы: 25'
 										maxHeight={500}
-									/>
-									<CellButton before={<Icon12Favorite />}><Link href="https://vk.com/vandrug">Посмотрите на мою фотографию!</Link></CellButton>
-									<ContentCard
+									/></Link>
+									<Link href="https://vk.com/write491829369"><CellButton before={<Icon12Favorite />}>Связаться с организатором</CellButton></Link>
+
+									<Link href="https://vk.com/wall-205932920_3"><ContentCard
 										subtitle="Раздел: задания на Бирже"
 										header="Помощь пожилым людям в доме пристарелых"
 										text="Пожилым людям в доме пристарелых на улице Макарова нужна помощь в ремноте со здании."
 										caption='Адрес: ул. Макарова 24; Баллы: 75'
 										maxHeight={500}
-									/>
-									<CellButton before={<Icon12Favorite />}>Добавить в Календарь</CellButton>
+									/></Link>
+									<Link href="https://vk.com/write401502480"><CellButton before={<Icon12Favorite />}>Связаться с организатором</CellButton></Link>
 
-									<ContentCard
+									<Link href="https://vk.com/wall-205932920_2"><ContentCard
 										subtitle="Раздел: задания на Бирже"
 										header="Помощь местной рыбной компании очистить водоём от мусора"
 										text="Компания по производству рыбных изделий просит помощи в очистке водоёма от пластика и мусора"
 										caption='Адрес: ул. Морская 25А; Баллы: 150'
 										maxHeight={750}
-									/>
-									<CellButton before={<Icon12Favorite />}>Добавить в Календарь</CellButton>
-								</CardGrid>
-								<img className="Persik" src={persik}/>
-							</Group>
-						</Panel>
-					</View>
-					<View id="messages" activePanel="messages">
-						<Panel id="messages">
-							<PanelHeader>Календарь</PanelHeader>
-							<Group>
-								<CardGrid size='l'>
-									<ContentCard
-										subtitle="Календарь Июль 2020"
-										header="25 Июля"
-										text="В центральном парке нужно собрать бутылки и пластик после коцерта"
-										caption='Заказчик - https:/vk.com/vandrug'
-										maxHeight={500}
-									/>
-									<ContentCard
-										subtitle="Календарь Июль 2020"
-										header="27 Июля"
-										text="Пожилым людям в доме пристарелых на улице Макарова нужна помощь в ремноте со здании."
-										caption='Заказчик - https:/vk.com/andreykuba'
-										maxHeight={500}
-									/>
-									<ContentCard
-										subtitle="Календарь Июль 2020"
-										header="30 Июля"
-										text="Компания по производству рыбных изделий просит помощи в очистке водоёма от пластика и мусора"
-										caption='Заказчик - https:/vk.com/alexdit2006'
-										maxHeight={500}
-									/>
-								</CardGrid>
-								<img className="Persik" src={persik}/>
-							</Group>
+									/></Link>
+									<Link href="https://vk.com/write344574162"><CellButton before={<Icon12Favorite />}>Связаться с организатором</CellButton></Link>
 
+								</CardGrid>
+								<img className="Persik" src={persik}/>
+							</Group>
 						</Panel>
 					</View>
+
 					<View id="profile" activePanel="profile">
 						<Panel id="profile">
 							<PanelHeader>Профиль</PanelHeader>
