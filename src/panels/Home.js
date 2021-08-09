@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { Panel, PanelHeader, Header, A, Link, FetchedUser, Button, Group, Cell, Div, Title, Avatar, withAdaptivity, SizeType, ViewWidth, usePlatform, VKCOM, SplitLayout, SplitCol, Epic, Tabbar, TabbarItem, View, PanelHeaderBack, Placeholder, Gradient, Text, Badge, CardGrid, ContentCard, List, CellButton } from '@vkontakte/vkui';
-
+ 
+import { Panel, PanelHeader, Header, SimpleCell, FetchedUser, Button, Group, Cell, Div, Title, Avatar, withAdaptivity, SizeType, ViewWidth, usePlatform, VKCOM, SplitLayout, SplitCol, Epic, Tabbar, TabbarItem, View, PanelHeaderButton, Placeholder, Gradient, Text, Badge, CardGrid, ContentCard, List, CellButton, FormLayout, FormLayoutGroup, FormItem, Input, Select, Textarea, Radio, Checkbox, Link } from '@vkontakte/vkui';
 import Icon28NewsfeedOutline from '@vkontakte/icons/dist/28/newsfeed_outline';
 import Icon28ServicesOutline from '@vkontakte/icons/dist/28/services_outline';
 import Icon28MessageOutline from '@vkontakte/icons/dist/28/message_outline';
@@ -17,12 +16,19 @@ import { Icon12Favorite } from '@vkontakte/icons';
 import { Icon24Add } from '@vkontakte/icons';
 import { Icon20AddCircle } from '@vkontakte/icons';
 import { Icon24Newsfeed } from '@vkontakte/icons';
-
+import { Icon28SettingsOutline } from '@vkontakte/icons';
+import { Icon28PaletteOutline   } from '@vkontakte/icons';
+import { Icon28UserOutline  } from '@vkontakte/icons';
+import { Icon28AccessibilityOutline } from '@vkontakte/icons';
+ 
+ 
 import '@vkontakte/vkui/dist/vkui.css';
-
+ 
 import persik from '../img/persik.png';
-import './Persik.css';
 import './Intro.css';
+import './Settings.js'
+import './About_Dev'
+import './Persik.css';
 
 const Example = withAdaptivity(({ viewWidth, id, icon, fetchedUser, fetchedState, sizeX, go, props, route }) => {
 	const platform = usePlatform();
@@ -198,19 +204,23 @@ const Example = withAdaptivity(({ viewWidth, id, icon, fetchedUser, fetchedState
 							<Group>
 								{fetchedUser &&
 									<Gradient style={{
-										margin: sizeX === SizeType.REGULAR ? '-7px -7px 0 -7px' : 0,
+										margin: sizeX === SizeType.REGULAR ? '7px -7px 0 -7px' : 0,
 										display: 'flex',
 										flexDirection: 'column',
 										alignItems: 'center',
 										justifyContent: 'center',
 										textAlign: 'left',
-										padding: 100,
+										padding: 72,
 									}}>
-										{fetchedUser.photo_200 ? <Avatar size={200} src={fetchedUser.photo_200} /> : null}
-										<Title style={{ marginBottom: 8, marginTop: 20 }} level="2" weight="bold">{`${fetchedUser.first_name} ${fetchedUser.last_name}`}</Title>
-										<Text style={{ marginBottom: 8, color: 'var(--text_primary)' }}>Волонтёр/Заказчик</Text>
-										<Text style={{ marginBottom: 8, color: 'var(--text_secondary)' }}>{fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}</Text>
+										{fetchedUser.photo_200 ? <Avatar size={144} src={fetchedUser.photo_200} /> : null}
+										<Title style={{ marginBottom: 8, marginTop: 20 }} level="2" weight="medium">{`${fetchedUser.first_name} ${fetchedUser.last_name}`}</Title>
+										<Text style={{ marginBottom: 24, color: 'var(--text_secondary)' }}>Волонтёр/Заказчик</Text>
+										<Text style={{ marginBottom: 8, color: 'var(--text_primary)' }}>{fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}</Text>
+										{/* <Text style={{ marginBottom: 24, color: 'var(--text_secondary)' }}></Text> */}
 									</Gradient>}
+								<Header mode="secondary">Настройки</Header>
+								<SimpleCell onClick={go} data-to='settings' before={<Icon28SettingsOutline />}>О приложении</SimpleCell>
+								<SimpleCell onClick={go} data-to='about_dev' before={<Icon28AccessibilityOutline />}>О разработчиках</SimpleCell>
 							</Group>
 						</Panel>
 					</View>
@@ -236,6 +246,4 @@ Example.propTypes = {
 };
 
 export default Example;
-
-
 

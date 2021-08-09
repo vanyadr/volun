@@ -8,6 +8,8 @@ import { Icon24Error } from '@vkontakte/icons';
 import Home from './panels/Home';
 import Cal from './panels/Cal';
 import Intro from './panels/Intro';
+import Settings from './panels/Settings'
+import About_Dev from './panels/About_Dev';
 
 const ROUTES = {
 	HOME: 'home',
@@ -108,7 +110,9 @@ const App = () => {
 			<AppRoot>
 				<View activePanel={activePanel} popout={popout}>
 					<Home id={ROUTES.HOME} fetchedUser={fetchedUser} fetchedState={fetchedState} snackbarError={snackbar} go={go} />
-					<Cal id='cal' go={go} />
+					<Cal id='cal' go={go}/>
+					<Settings id='settings' go={go}/>
+					<About_Dev id='about_dev' go={go} fetchedUser={fetchedUser} fetchedState={fetchedState}/>
 					<Intro id={ROUTES.INTRO} fetchedUser={fetchedUser} go={go} route={ROUTES.HOME} userHasSeenIntro={userHasSeenIntro} />
 
 				</View>
